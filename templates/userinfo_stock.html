@@ -1,0 +1,29 @@
+<!doctype html>
+<title>Historical Stock Price</title>
+<link rel=stylesheet type=text/css href='{{ url_for('static', filename ='style_stock.css')}}'>
+<div class=page>
+  <h1>Historical Stock Price</h1>
+  <div class=metanav>
+
+    <h4>
+     Please type in a stock ticker (e.g AMZN) and time range (YYYY-MM-DD).
+    </h4>
+
+    <form id='userinfoform_stock' method='post' action='hello_stock' >
+      <p>
+    Stock Tick: <input type='text' name='name_stock' />
+      </p>
+      <p>
+    Date From: <input type='text' name='date_from' />
+      </p>
+      <p>
+    Date To: <input type='text' name='date_to'>
+      </p>
+      <p>
+    <input type='submit' value='Submit_stock' />
+      </p>
+    </form>
+
+  </div>
+</div>
+</html>
