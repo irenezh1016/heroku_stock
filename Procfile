@@ -1,1 +1,1 @@
-web: gunicorn test_final:app_stock --log-file -
+web: env PYTHONPATH=$PYTHONPATH:$PWD gunicorn test_final:app_stock --log-file -
