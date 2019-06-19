@@ -21,7 +21,7 @@ from bokeh.embed import components
 app_stock = Flask(__name__)
 app_stock.vars = {}
 
-@app_stock.route('/hello_stock', methods = ['GET', 'POST'])
+@app_stock.route('/', methods = ['GET', 'POST'])
 def hello_stock():
     if request.method == 'GET':
         return render_template('userinfo_stock.html')
@@ -51,8 +51,10 @@ def hello_stock():
         
         ab.xgrid.grid_line_color=None
         ab.ygrid.grid_line_alpha=0.5
-        ab.xaxis.axis_label = 'Time'
-        ab.yaxis.axis_label = 'Value'
+        ab.xaxis.axis_label = 'Date'
+        ab.xaxis[0].formatter.days = '%m/%d/%Y'
+        ab.xaxis.major_label_orientation = 'vertical'
+        ab.yaxis.axis_label = 'Close price'
         ab.line('date', 'close_price', source = sources)
         
         hover = HoverTool(tooltips=[('date','@date{%F}'),
@@ -66,6 +68,7 @@ def hello_stock():
         script, div = components(ab)
         #show(ab)
         return render_template('result_stock.html', script = script, div=div)
+
 if __name__ == '__main__':
     app_stock.run(debug=True)
 
