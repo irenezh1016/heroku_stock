@@ -66,5 +66,7 @@ def hello_stock():
         script, div = components(ab)
         #show(ab)
         return render_template('result_stock.html', script = script, div=div)
+if __name__ == '__main__':
+    app_stock.run(debug=True)
 
  
