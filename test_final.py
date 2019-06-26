@@ -29,7 +29,7 @@ def hello_stock():
         app_stock.vars['name_stock'] = request.form['name_stock']
         app_stock.vars['date_from'] = request.form['date_from']
         app_stock.vars['date_to'] = request.form['date_to']
-        parameters = {'symbol': app_stock.vars['name_stock'], 'api_token':'a9Fa0I4w1DAvfZIbXS2DlSBTOMIj7ULPpIg496Zw7KYu8zqAvYMS7em2nRHN', 'date_from': app_stock.vars['date_from'],'date_to': app_stock.vars['date_to']}
+        parameters = {'symbol': app_stock.vars['name_stock'], 'api_token':'####', 'date_from': app_stock.vars['date_from'],'date_to': app_stock.vars['date_to']}
         
         response = requests.get('https://api.worldtradingdata.com/api/v1/history', params = parameters)
         json_data = response.json()
